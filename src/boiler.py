@@ -41,10 +41,11 @@ if __name__ == '__main__':
             peaks = gtr_wave.ft_peaks(min_dist=0.001, thres=0.2)
             peaks_all.append(peaks)
 
-            ax.plot(x_s, np.full(x_s.size, i) + D_MIN, y_s) # Plots the waveform
+            ax.plot(x_s, np.full(x_s.size, i) + D_MIN, y_s)
 
             for peak in peaks:
-                ax.plot([x_s[peak]], [i+D_MIN], [y_s[peak]], marker='o', color='r', 
+                ax.plot([x_s[peak]], [i+D_MIN], [y_s[peak]], marker='o', 
+                        color='r', 
                         markersize=1.2)
 
             if UNC:
@@ -74,9 +75,12 @@ if __name__ == '__main__':
         for i in range(2, CONNECT_N + 2):
             wav = gtr_waves[0]
             ax.plot(np.full(np.linspace(D_MIN, D_MIN + 50, num=100).size, 
-                wav.normalized_abs_dft()[0][wav.ft_peaks(min_dist=0.001, thres=0.2)[i-2]]), 
+                wav.normalized_abs_dft()[0][
+                        wav.ft_peaks(min_dist=0.001, thres=0.2)[i-2]
+                    ]), 
                     np.linspace(D_MIN, D_MIN + 50, num=100),
-                    [np.sin(i * np.pi * (val+D_MIN) / 648) + offsets[i-2] for val in np.linspace(0, D_MIN + 50, num=100)],
+                    [np.sin(i * np.pi * (val+D_MIN) / 648) + offsets[i-2] 
+                        for val in np.linspace(0, D_MIN + 50, num=100)],
                     linestyle=':', color=colors[i-2])
 
     ax.set_xlabel('The frequency')
