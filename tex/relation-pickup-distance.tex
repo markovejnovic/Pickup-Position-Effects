@@ -19,6 +19,7 @@
 \providecommand{\abs}[1]{\lvert#1\rvert}
 \providecommand{\norm}[1]{\lVert#1\rVert}
 
+\pagenumbering{gobble}
 \title{Investigating the effect of pickup position on the harmonic response of 
 an electric guitar}
 
@@ -27,44 +28,125 @@ an electric guitar}
 \begin{document}
 \maketitle
 \begin{flushright}
-	(Word count: 2960)
+	(Word count: 3635)
 \end{flushright}
 
 \tableofcontents
 
+\pagebreak
+
+\pagenumbering{arabic}
+
+\section{Rationale}
+
+\paragraph*{}
+Personally, I have always been very interested in electronics. I have always
+been fascinated by electrical devices. Considering that I am a guitarist, I was
+more than happy to realize how much of a role electronics and engineering play
+in creating music.
+
+\paragraph*{}
+For my extended essay, the choice of what I would write was not a difficult
+one. After deciding that I would do my extended essay in physics - my favorite
+subject - it did not take me long before I decided that I wanted to combine
+both of my hobbies - electronics and music - and do research in the field.
+
+\paragraph*{}
+Considering that I've built a guitar myself, I wanted to do a bit more research
+on the specific effects that are at play in a guitar. It struck me how much the
+position of the pickup influences the sound produced, so I decided that I
+wanted to discover the relationship itself.
+
 \section{Introduction}
 
-\subsection{Scope of work}
+\paragraph*{}
+The position of electric guitar pickups determines the way an electric guitar
+sounds. Depending on the position of the pickup the frequency response of a
+plucked string will differ largely. The goal of this research paper is to
+investigate the aforementioned effect and create a relationship between the
+frequency response of the guitar and the pickup position.
+
+\paragraph*{}
+Research in this field could lead to innovations regarding electrical guitars,
+improvement of electrical guitar design and manufacturing and overall better
+music quality.
+
+\subsection{Background information}
+
+\subsubsection{Historical background}
+
 \paragraph*{}
 Given the rise of popularity of electric instruments in the mid-20th century, 
-music has become an art in engineering and physics as well as music itself. 
-To achieve a pleasant tone, music instruments are designed in many different 
-manners, as shown in figure \ref{fig:guitars}. 
+music has become an art in engineering and physics as well as music itself.
+Around this time, due to the rising popularity of big bands, musicians were
+looking to incorporate guitars in bands, but they have been failing due to the
+fact that the classical acoustic guitar was simply not loud enough (``Early 
+History Of Rickenbacker'').
+
+\paragraph*{}
+Combating this issue, in the 30s, \textit{George Beauchamp} created the first
+notable electric guitar pickup, together with the first notable electric guitar
+- ``Frying Pan'' (``Early History Of Rickenbacker''), shown in figure
+\ref{fig:frying-pan}.
 \begin{figure}[ht]
 	\centering
-	\begin{subfigure}{.3\textwidth}
-		\centering
-		\includegraphics[width=.8\linewidth]{img/stratocaster}
-		\caption{A Fender Stratocaster (Chicago Music Exchange)}
-	\end{subfigure}
-	\begin{subfigure}{.3\textwidth}
-		\centering
-		\includegraphics[width=.8\linewidth]{img/telecaster}
-		\caption{A Fender Telecaster (Guitar Center)}
-	\end{subfigure}
-	\caption{Various types of electrical guitars}
-	\label{fig:guitars}
+	\includegraphics[width=.3\linewidth]{img/frying-pan}
+	\caption{Beauchamp's ``Frying Pan'' (Museum of Making Music)}
+	\label{fig:frying-pan}
 \end{figure}
 
 \paragraph*{}
-The guitar pickup is unmistakably the most important piece of an electric 
-guitar. It is precisely what creates the electrical signal from the vibrations 
-of the strings. This study aims at finding the precise physical effect of 
-the position of the pickup, as this plays a major role in the tone of the 
-electric guitar. Research in this field could lead to further improvements in 
-the field, with movable pickups for creating various different tones.
+The guitar pickup is unmistakably the most important piece of an electric
+guitar. It is the device which translates the mechanical oscillatory motion of
+the strings into an electrical signal linearly dependent on the original motion
+of the strings. Today, electric guitars and electric pickups come in various 
+forms.
 
-\subsection{Background information}
+\subsubsection{Electric guitar pickup types}
+
+\paragraph*{}
+Electric guitar pickups are either passive or active. Active guitar pickups can
+be thought of as passive guitar pickups with a preamp stage at the output of
+the passive filter.
+
+\paragraph*{}
+Today, there are two widespread electric guitar pickup types: the
+\textit{single-coil} electric guitar pickup and the \textit{humbucker}.
+\begin{figure}[ht]
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{img/sc-pickup}
+		\caption{A single coil pickup (Musician's Friend)}
+		\label{fig:sc-pickup}
+	\end{subfigure}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=.8\linewidth]{img/hum-pickup}
+		\caption{A humbucker pickup (Amazon.com)}
+		\label{fig:hum-pickup}
+	\end{subfigure}
+	\caption{Examples of the two most popular types of electric guitar pickups}
+\end{figure}
+
+\paragraph*{}
+The single-coil electric pickup was the one originally created by Beauchamp and
+innovators of his time. It was relatively simple to create and manufacture and
+was based on a simple physical phenomenon. Shown in figure \ref{fig:sc-pickup},
+the single coil pickup is the most popular solution today.
+
+\paragraph*{}
+With amplifiers becoming louder and more powerful, musicians noticed that their
+single-coil pickups were picking up electromagnetic interference (due to their
+antenna-like properties) as well as the motion of the strings. In 1955,
+\textit{Seth Lover} invented the \textit{humbucher}. The humbucker, shown in
+\ref{fig:hum-pickup} promised to solve this problem by combining two
+single-coil pickups which were connected in reverse polarity, effectively
+canceling out the electromotive force generated from external fields but not
+the electromotive force generated by the motion of the strings.
+
+\paragraph*{}
+This paper considers only single-coil pickups, as they are the most popular,
+widespread and simple to use.
 
 \subsubsection{Musical background}
 
@@ -81,7 +163,7 @@ biological factor.
 
 \subsubsection{Classical guitar operation}
 \paragraph*{}
-Although the classical guitar was not explored in this experiment, the basic 
+Although the classical guitar is not explored in this research paper, the basic
 theory of its operation is necessary to understand the operation of the 
 electric guitar. A model guitar is given in \ref{fig:ac-guitar}.
 \begin{figure}[ht]
@@ -120,8 +202,11 @@ causing the individual point charges in the wire $(3)$ to experience a
 \textit{Lorentz force}
 \footnote{Lorentz force is the force that is exerted on a particle moving 
 	through an electric and magnetic field (The Editors of Encyclopaedia 
-Britannica).}. Because of this, an electromotive force appears in the wire 
-$(3)$ which is linearly dependent on the motion of the string $(1)$.
+Britannica).}. \textit{Faraday's law} states that the electromotive force
+generated by the pickup is equal to the rate of change of the flux, and since
+there is a change of flux due to the metal string disturbing the magnetic
+field, an electromotive force is generated in the wire of the pickup $(3)$ 
+which is linearly dependent on the motion of the string $(1)$.
 
 \subsubsection{String harmonic series}
 \paragraph*{} 
@@ -129,8 +214,7 @@ The string, as any oscillating body with fixed ends, creates harmonic series -
 sequences of sinusoidal tones whose frequencies are integer multiples of the 
 lowest frequency, ie. the fundamental frequency. How high the amplitude of the 
 individual harmonics is depends on a multitude of factors - the thickness of 
-the string, the material of the string, how it is attached to the bridge, 
-et cetera.
+the string, the material of the string, the tension of the string, et cetera.
 
 \paragraph*{} 
 Because of these harmonic series an interesting effect comes to pass when an 
@@ -177,9 +261,10 @@ harmonics is given in figure \ref{fig:pickup-harmonics}.
 				dashed
 			]{-sin(deg(1.5*pi*x - pi/2)) - 5};
 			\draw [>=stealth, dashed] (-0.33333333, 0.865) -- (-0.333333,-6);
-			\draw (-0.3666666, -7) -- (-0.3, -7) -- (-0.3, -6) -- (-0.366666, -6) -- (-0.36666, -7);
-			\draw (-0.3666666, -6.1) -- (-0.4, -6.1) -- (-0.4, -6.9) -- (-0.366666, -6.9);
-			\draw (-0.3, -6.1) -- (-0.2666666, -6.1) -- (-0.2666666, -6.9) -- (-0.3, -6.9);
+			\draw (-0.3666666, -7) -- (-0.3, -7) -- (-0.3, -6) -- (-0.366666,
+			-6) -- (-0.36666, -7); \draw (-0.3666666, -6.1) -- (-0.4, -6.1) --
+			(-0.4, -6.9) -- (-0.366666, -6.9); \draw (-0.3, -6.1) --
+			(-0.2666666, -6.1) -- (-0.2666666, -6.9) -- (-0.3, -6.9);
 		\end{axis}
 	\end{tikzpicture}
 	\caption{The string oscillating over multiple harmonics over a pickup}
@@ -191,7 +276,8 @@ however, the third harmonic waveform is at the node at the position of the
 pickup, and therefore the harmonic is not picked up. Note also, that the 
 pickup will not pick up the first or the second harmonic maximally, as at the 
 line parallel to the magnet intersecting the string, the string is not at its 
-anti-node.
+anti-node. The pickup effectively filters individual harmonics, depending on
+its position.
 
 \paragraph*{} 
 A single harmonic can be modeled as a sine wave:
@@ -368,8 +454,77 @@ this goal.
 
 \subsection{The Fourier transformation}
 
+\subsubsection{Introduction}
+
 \paragraph*{}
-To prove the Fourier transformation, a definition of what the Fourier series 
+The Fourier transformation is a function which converts an input signal given
+in the time domain to the frequency domain. In mathematical terms, for a
+signal $S(t)$, it will create a function $\hat{S}(\nu)$ where $\nu$ represents
+frequency.
+
+\paragraph{} 
+Suppose the graph of $S(t)$ is as given in figure \ref{fig:unk-func}.
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				xlabel=Time $t\text{ }(\si{s})$,
+			ylabel=Amplitude $A$]
+			\addplot[
+				domain=0:5,
+				samples=500,
+				color=blue
+			]{sin(deg(2 * pi * x)) + sin(deg(3 * pi * x)) + sin(deg(5 * pi *
+			x))};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The graph of an unknown signal $S(t)$}
+	\label{fig:unk-func}
+\end{figure}
+
+\paragraph*{}
+We shall suppose that $S(t)$ is a sum of sine and cosine waves. Now a question
+is posed - how can we resolve the amplitudes and the frequencies of the
+individual constituent sine and cosine waves?
+
+\paragraph*{}
+The Fourier transformation, in physical values (ie. time and frequency) is
+defined as the following:
+$$\hat{S}(\nu) = \int_{-\infty}^{\infty} S(t) e^{-2 \pi i t \nu} dt$$
+Note the Fourier transformation is complex. Because of its complex domain, it
+is used for both sine and cosine waves.
+
+\paragraph*{}
+The Fourier transformation creates a graph equal to the one given in figure
+\ref{fig:ft-unk-func}\footnote{This is not an exact graph of the Fourier
+	transformation of this function. Due to there being only three constituent
+	sine waves, the computer algorithm that I've employed has created some
+	inaccuracies. The derivative of a more accurate graph would not be as high
+	as it is in the one I present, at the points of inflexion around the values
+	of $2$, $3$ and $5$. However, for the purposes of exemplifying my point,
+the graph is sufficiently accurate.}. Note how the graph shows peaks at values
+$2$, $3$ and $5$ $\si{Hz}$. The graph is saying that the individual constituent
+frequencies were precisely that - $2\si{Hz}$, $3\si{Hz}$ and $5\si{Hz}$. The
+original signal was therefore:
+$$S(t) = \sin(2 \pi t) + \sin(3 \pi t) + \sin(5 \pi t)$$
+
+\begin{figure}[ht]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+				xlabel=Frequency $\nu\text{ }(\si{Hz})$,
+				ylabel=Amplitude]
+				\addplot table [mark=none, y=A, x=f]{Data/four-plot.dat};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{The Fourier transformation of $S(t)$, $\hat{S}(\nu)$}
+	\label{fig:ft-unk-func}
+\end{figure}
+
+\subsubsection{Derivation}
+
+\paragraph*{}
+To prove the Fourier transformation, a definition of what the Fourier series is
 is necessary.
 
 \subsubsection{Fourier series}
@@ -544,7 +699,7 @@ From this it follows that $c_n$, the complex Fourier coefficient, is:
 This is referred to as the \textit{analysis} equation. This equation gives 
 spectral lines for a frequency $n$. Note that it is not continuous.
 
-\subsubsection{The Fourier transformation}
+\subsubsection{The Fourier transformation derivation}
 
 \paragraph*{}
 The Fourier transformation can be thought of as a continuous version of the 
@@ -580,7 +735,7 @@ variables - the frequency and the amplitude.
 
 \paragraph*{}
 To measure the effect of pickup position on harmonics of the electric guitar, 
-an electric guitar with a movable pickup was constructed, as shown in 
+an electric guitar with a movable pickup was constructed, as shown in figure
 \ref{fig:custom-guitar}.
 \begin{figure}[ht]
 	\centering
@@ -596,7 +751,7 @@ position can be changed.
 \paragraph*{}
 The body of the guitar (3) was marked with hatch marks so the pickup could be 
 set to a desired value. These hatch marks were marked using a ruler. They are 
-shown in \ref{fig:hatch-marks}.
+shown in figure \ref{fig:hatch-marks}.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=.8\textwidth]{img/tally-marks}
@@ -611,7 +766,9 @@ was measured with a caliper.
 The pickup wires were connected to a \textit{GW Instek GDS-1000A-U} 
 oscilloscope. The ground wire was also connected to the bridge of the electric 
 guitar and the ground of the oscilloscope, to remove any potential noise that 
-might occur, as given in figure \ref{fig:connection-schematic}.
+might occur\footnote{Due to being done in a building, there was a high chance
+	that the strings would pick up the mains hum, so grounding them was
+necessary.}, as given in figure \ref{fig:connection-schematic}.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=.5\textwidth]{img/connection-schematic}
@@ -830,6 +987,16 @@ in a different manner creates a different tone; the gradual detuning of the
 guitar in an environment of varying temperature and mechanical impacts near 
 the guitar which could have caused the strings to vibrate.
 
+\subsection{Qualitative analysis}
+
+\paragraph*{}
+Due to the poor results of the experiment, a small qualitative experiment was
+employed. Using a readily available \textit{Fender Stratocaster} guitar, the
+same notes were played with different pickup position (bridge and neck
+position). It was noticed that there was a significant audible change in tone.
+This leads to believe that the quantitative experiment previously done was
+erroneous.
+
 \section{Conclusion}
 
 \paragraph*{}
@@ -871,45 +1038,63 @@ lower pitches, as the hypothesis suggests.
 
 \clearpage
 \pagebreak
+
 \section*{Works cited}
 \begin{hangparas}{.25in}{1}
+
+Amazon.com. \textit{Suhr SSV Bridge Humbucker (53Mm)}.
+\url{https://www.amazon.com/Suhr-SSV-Bridge-Humbucker-53mm/dp/B008J7YLEC}.
+Accessed 16 Oct 2018.\\
+
 Autodesk. \textit{Autocad 2014}. Version 19.1, Autodesk, 2014.\\
 
 Chicago Music Exchange. \textit{Fender Stratocaster Sunburst 1956}. \url{https://images.reverb.com/image/upload/s--iiQ3rVKI--/a_exif,c_limit,e_unsharp_mask:80,f_auto,fl_progressive,g_south,h_1600,q_80,w_1600/v1497644319/ax58jibpcrmys6id16hl.jpg}. Accessed 29 Aug 2018.\\
 
-Donald Tillman, J. ``Response Effects Of Guitar Pickup Position And Width''. 
-\textit{Till.Com}, 2002, \url{http://www.till.com/articles/PickupResponse/.} 
+Donald Tillman, J. ``Response Effects Of Guitar Pickup Position And Width''.
+\textit{Till.Com}, 2002, \url{http://www.till.com/articles/PickupResponse/.}
 Accessed 31 Aug 2018.\\
 
 E. Oliphant, Travis. \textit{A Guide To Numpy}. Trelgol Publishing, 2006.\\
 
-Good Will Instrument Co., LTD. \textit{GDS-1000-U Specifications}. Good Will 
-Instrument Co., LTD, 
-\url{https://www.gwinstek.com/en-global/products/downloadSeriesSpec/192}. 
-Accessed 28 Aug 2018.\\
+``Early History Of Rickenbacker''. \textit{Rickenbacker.Com},
+\url{http://www.rickenbacker.com/history_early.asp}. Accessed 15 Oct 2018. \\
 
-Guitar Center. \textit{Fender Special Edition HH Maple Fingerboard Standard 
+
+Good Will Instrument Co., LTD. \textit{GDS-1000-U Specifications}. Good Will
+Instrument Co., LTD,
+\url{https://www.gwinstek.com/en-global/products/downloadSeriesSpec/192}.
+Accessed 28 Aug 2018.\\
+Guitar Center. \textit{Fender Special Edition HH Maple Fingerboard Standard
 Telecaster Sea Foam Pearl}. \url{https://www.guitarcenter.com/Fender/Special-Edition-HH-Maple-Fingerboard-Standard-Telecaster.gc}. Accessed 29 Aug 2018.\\
 
-Hunter, John D. ``Matplotlib: A 2D Graphics Environment''. \textit{Computing 
-In Science \& Engineering}, vol 9, no. 3, 2007, pp. 90-95. \textit{Institute 
-Of Electrical And Electronics Engineers (IEEE)}, 
+Hunter, John D. ``Matplotlib: A 2D Graphics Environment''. \textit{Computing
+In Science \& Engineering}, vol 9, no. 3, 2007, pp. 90-95. \textit{Institute
+Of Electrical And Electronics Engineers (IEEE)},
 \url{doi:10.1109/mcse.2007.55}. Accessed 31 Aug 2018.\\
+
+Museum of Making Music. \textit{Ro-Pat-In Cast Aluminum Electric Hawaiian
+``Frying Pan'' Guitar}. 2009,
+\url{https://commons.wikimedia.org/wiki/File:Elektrofryingpan.jpg}. Accessed 15
+Oct 2018. \\
+
+Musician's Friend. \textit{EMG S1 Hot Passive Single Coil Pickup}.
+\url{https://www.musiciansfriend.com/accessories/emg-s1-hot-passive-single-coil-pickup}.
+Accessed 16 Oct 2018. \\
 
 Negri, Lucas. \textit{PeakUtils}. Version 1.2.0, 2018.\\
 
-``Scale Length Explained''. \textit{Stewmac.Com}, 2018, 
+``Scale Length Explained''. \textit{Stewmac.Com}, 2018,
 \url{https://www.stewmac.com/How-To/Online_Resources/Learn_About_Guitar_and_Instrument_Fretting_and_Fretw/Scale_Length_Explained.html}. Accessed 31 Aug 2018.\\
 
-The Editors of Encyclopaedia Britannica. ``Lorentz Force''. 
-\textit{Encyclopædia Britannica}, 2017, 
+The Editors of Encyclopaedia Britannica. ``Lorentz Force''.
+\textit{Encyclopædia Britannica}, 2017,
 \url{https://www.britannica.com/science/Lorentz-force}. Accessed 31 Aug 2018.\\
 
-Van Rossum, Guido, and Fred L. Drake. \textit{Python 3 Reference Manual}. 
-Paramount, CA, 2009, \url{https://dl.acm.org/citation.cfm?id=1593511}. 
+Van Rossum, Guido, and Fred L. Drake. \textit{Python 3 Reference Manual}.
+Paramount, CA, 2009, \url{https://dl.acm.org/citation.cfm?id=1593511}.
 Accessed 28 Aug 2018.\\
 
-Wolfe, Joe. ``Helmholtz Resonance''. \textit{Newt.Phys.Unsw.Edu.Au}, 
+Wolfe, Joe. ``Helmholtz Resonance''. \textit{Newt.Phys.Unsw.Edu.Au},
 \url{http://newt.phys.unsw.edu.au/jw/Helmholtz.html}. Accessed 31 Aug 2018.\\
 
 \end{hangparas}
