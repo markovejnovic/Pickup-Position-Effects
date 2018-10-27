@@ -26,3 +26,4 @@
 \contentsline {subsection}{\numberline {7.1}Rectifying errors}{17}{subsection.7.1}
 \contentsline {subsubsection}{\numberline {7.1.1}Sustain}{17}{subsubsection.7.1.1}
 \contentsline {subsubsection}{\numberline {7.1.2}Timbre from picking}{17}{subsubsection.7.1.2}
+\contentsline {section}{Appendix}{21}{section*.94}

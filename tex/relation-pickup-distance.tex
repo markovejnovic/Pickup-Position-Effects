@@ -1,6 +1,7 @@
 \documentclass{article} 
 
 \usepackage{amsmath}
+\usepackage{multirow}
 \usepackage{amssymb}
 \usepackage[margin=1.0in]{geometry}
 \usepackage{hyperref}
@@ -14,6 +15,7 @@
 \usepackage{csvsimple}
 \usepackage{ragged2e}
 \usepackage{subcaption}
+\usepackage{longtable}
 \pgfplotsset{compat=newest}
 
 \providecommand{\abs}[1]{\lvert#1\rvert}
@@ -37,7 +39,7 @@
 		\large
 		\vspace{0.5cm}
 		\begin{flushright}
-			(Word count: 3610)
+			(Word count: 3621)
 		\end{flushright}
 
 		\vfill
@@ -793,6 +795,7 @@ published online and is available at the following link:
 \url{
 	https://github.com/markovejnovic/relationship-pickup-distance/tree/master/src/Data
 }
+A fraction of the available data is given in the appendix.
 
 \paragraph*{}
 The uncertainty for the \textit{GW Instek GDS-1000A-U} is $\pm 2 \si{mV}$ 
@@ -1079,9 +1082,12 @@ Wolfe, Joe. ``Helmholtz Resonance''. \textit{Newt.Phys.Unsw.Edu.Au},
 
 \end{hangparas}
 \pagebreak
+
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
 \begin{appendices}
 
-	\section*{Data processing code}
+	\subsection*{Data processing code}
 	\lstinputlisting[
 		language=Python,
 		frame=single,
@@ -1112,6 +1118,24 @@ Wolfe, Joe. ``Helmholtz Resonance''. \textit{Newt.Phys.Unsw.Edu.Au},
 		frame=single,
 		title=plot.py
 	]{../src/plot.py}
+
+	\subsection*{Raw data}
+	\paragraph*{}
+	The following table shows the amplitudes of the guitar signal at sample
+	times of 6 different pickup positions as outputted by the oscilloscope. The
+	data shown here is for the $A$ string played at the $5^{\text{th}}$ fret.
+	\csvreader[
+		longtable=rrrrrrr,
+		table head={
+			\multirow{2}{*}{Sample time $t$ ($s$)} &
+			\multicolumn{6}{c}{Voltage at position $d$ $[\times 5 \cdot 10^{-2}
+			V]$} \\ \cline{2-7}
+			& $0mm$ & $10mm$ & $20mm$ & $30mm$ & $40mm$ & $50mm$ \\ \hline \hline
+		},
+		late after line=\\\hline,
+	]{Data/rawdata.csv}
+	{t = \t, a = \a, b = \b, c = \c, d = \d, e = \e, f = \f}
+	{\t & \a & \b & \c & \d & \e & \f}
 
 \end{appendices}
 
