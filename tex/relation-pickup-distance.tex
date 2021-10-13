@@ -34,7 +34,10 @@
 
 		\vspace{1.0cm}
 		\LARGE
-		Candidate Number: \textit{hbd004 (050460-0147)}
+        Marko Vejnovi\'{c}
+
+        \vspace{0.5cm}
+        2018
 
 		\large
 		\vspace{0.5cm}
@@ -1118,25 +1121,6 @@ Wolfe, Joe. ``Helmholtz Resonance''. \textit{Newt.Phys.Unsw.Edu.Au},
 		frame=single,
 		title=plot.py
 	]{../src/plot.py}
-
-	\subsection*{Raw data}
-	\paragraph*{}
-	The following table shows the amplitudes of the guitar signal at sample
-	times of 6 different pickup positions as outputted by the oscilloscope. The
-	data shown here is for the $A$ string played at the $5^{\text{th}}$ fret.
-	\csvreader[
-		longtable=rrrrrrr,
-		table head={
-			\multirow{2}{*}{Sample time $t$ ($s$)} &
-			\multicolumn{6}{c}{Voltage at position $d$ $[\times 5 \cdot 10^{-2}
-			V]$} \\ \cline{2-7}
-			& $0mm$ & $10mm$ & $20mm$ & $30mm$ & $40mm$ & $50mm$ \\ \hline \hline
-		},
-		late after line=\\\hline,
-	]{Data/rawdata.csv}
-	{t = \t, a = \a, b = \b, c = \c, d = \d, e = \e, f = \f}
-	{\t & \a & \b & \c & \d & \e & \f}
-
 \end{appendices}
 
 \end{document}
